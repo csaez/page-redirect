@@ -1,14 +1,68 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8" />
     <title>This site has moved</title>
-    <meta http-equiv="refresh" content="3; url=https://www.cesarsaez.com" />
-  </head>
-  <body>
-    <h1>This site has moved</h1>
-    <p>The content you’re looking for is now at:</p>
-    <p><a href="https://www.cesarsaez.com">https://www.cesarsaez.com</a></p>
-    <p>You’ll be redirected shortly.</p>
-  </body>
+    <link rel="canonical" href="https://www.cesarsaez.com">
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          Cantarell, "Helvetica Neue", Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background: #ffffff;
+        color: #111111;
+        margin: 0;
+        padding: 1.5rem;
+      }
+
+      section {
+        max-width: 728px;
+        padding: 0 24px;
+        margin: 0 auto;
+        zoom: 1;
+      }
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+
+      a {
+        color: #007aff;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>This site has moved!</h1>
+        <p aria-live="polite">This domain is no longer in use. You will be redirected to <a href="https://www.cesarsaez.com">www.cesarsaez.com</a>.</p>
+        <p>Redirecting in a moment…</p>
+    </section>
+
+    <!-- JavaScript for countdown and redirect -->
+    <script>
+        const countDown = 3;
+        const countdownElement = document.querySelector('p:last-child');
+        let currentCount = countDown;
+
+        function updateCountdown() {
+            countdownElement.textContent = `Redirecting in ${currentCount}…`;
+            if (currentCount <= 0) {
+                window.location.href = 'https://www.cesarsaez.com';
+                clearInterval(timer);
+            }
+            currentCount--;
+        }
+
+        const timer = setInterval(updateCountdown, 1000);
+    </script>
+</body>
 </html>
